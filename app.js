@@ -9,11 +9,16 @@ require('./models/Comments');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
-
 var app = express();
 
+// process.argv.forEach(function(val, index, array) {
+//   console.log(index + ': ' + val);
+// });
+
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/news');
+var user_pass = process.argv[2] + ':' + process.argv[2];
+mongoose.connect('mongodb://' + user_pass + '@ds045011.mongolab.com:45011/news');
+//mongoose.connect('mongodb://localhost/news');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

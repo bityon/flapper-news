@@ -27,7 +27,7 @@
     		<span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>
     			{{post.upvotes}}
     		<span style="font-size:20px; margin-left:10px;">
-	          	<a ng-show="post.link" href="{{post.link}}">
+	          	<a ng-show="post.link" target="_blank" href="{{post.link}}">
             		{{post.title}}
           		</a>
           		
@@ -35,7 +35,7 @@
             		{{post.title}}
           		</span>
           		
-          		<span>
+          		<span style="font-size: 14px;">
   					<a href="#/posts/{{post._id}}">Comments</a>
 				</span>
     		</span>
@@ -59,7 +59,7 @@
 	<script type="text/ng-template" id="/posts.html">
 		<div class="page-header">
 		    <h3>
-		      <a ng-show="post.link" href="{{post.link}}">
+		      <a ng-show="post.link" target="_blank" href="{{post.link}}">
 		        {{post.title}}
 		      </a>
 		      <span ng-hide="post.link">
